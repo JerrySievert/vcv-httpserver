@@ -1,0 +1,15 @@
+{
+  "slug": "httpserver",
+  "name": "httpserver",
+  "version": "1.0.0",
+  "license": "MIT",
+  "brand": "SV Modular",
+  "author": "SV Modular",
+  "authorEmail": "svmodular@legitimatesounding.com",
+  "authorUrl": "https://legitimatesounding.com/sv-modular/",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "",
+  "donateUrl": "",
+  "modules": []
+}
