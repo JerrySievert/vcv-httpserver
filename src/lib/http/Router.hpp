@@ -63,8 +63,11 @@ public:
     return routes.size();
   }
 
-
+#ifdef ARCH_WIN
+  bool route (Request *request, SOCKET fd) {
+#else
   bool route (Request *request, int fd) {
+#endif
     std::string uri;
     if (request->uri) {
       uri = request->uri;

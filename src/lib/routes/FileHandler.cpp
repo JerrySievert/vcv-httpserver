@@ -2,6 +2,7 @@
 #include <climits>
 #include <cstdlib>
 #include <sys/stat.h>
+#include <stdlib.h>
 
 #include "FileHandler.hpp"
 
@@ -30,7 +31,12 @@ static char *realPath (char *filepath) {
   std::string fullPath = base + std::string("/") + filepath;
   char editedPath[PATH_MAX];
 
+#ifdef ARCH_WIN
+  char *ep = _fullpath(editedPath, base.c_str(), PATH_MAX);
+#else
   char *ep = realpath(base.c_str(), editedPath);
+#endif
+
   if (ep == NULL) {
     return nullptr;
   }
@@ -38,7 +44,12 @@ static char *realPath (char *filepath) {
 
   static char actualPath[PATH_MAX];
 
+#ifdef ARCH_WIN
+  char *ret = _fullpath(actualPath, fullPath.c_str(), PATH_MAX);
+#else
   char *ret = realpath(fullPath.c_str(), actualPath);
+#endif
+
   if (ret) {
     std::string newPath = ret;
     if (newPath.substr(0, basePath.size()) == basePath) {

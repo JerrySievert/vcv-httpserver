@@ -20,3 +20,7 @@ DISTRIBUTABLES += $(wildcard LICENSE*)
 
 # Include the Rack plugin Makefile framework
 include $(RACK_DIR)/plugin.mk
+
+ifdef ARCH_WIN
+	LDFLAGS += -lws2_32
+endif
