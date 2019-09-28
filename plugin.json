@@ -2,7 +2,7 @@
   "slug": "httpserver",
   "name": "httpserver",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "brand": "SV Modular",
   "author": "SV Modular",
   "authorEmail": "svmodular@legitimatesounding.com",
